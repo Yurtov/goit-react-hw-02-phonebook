@@ -1,6 +1,13 @@
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
+import {
+  StyledForm,
+  Label,
+  StyledField,
+  StyledErrorMessage,
+  Button,
+} from './ContactForm.styled';
 
 const nameRegExp = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 const phoneRegExp =
@@ -38,20 +45,22 @@ export const ContactForm = ({ onAddContact }) => (
       actions.resetForm();
     }}
   >
-    <Form>
-      <label>
+    <StyledForm>
+      <Label>
         Name
-        <Field name="name" />
-        <ErrorMessage name="name" />
-      </label>
+        <StyledField name="name" />
+        <br />
+        <StyledErrorMessage name="name" component="div" />
+      </Label>
 
-      <label>
+      <Label>
         Number
-        <Field name="number" />
-        <ErrorMessage name="number" />
-      </label>
+        <StyledField name="number" />
+        <br />
+        <StyledErrorMessage name="number" component="div" />
+      </Label>
 
-      <button type="submit">Add contact</button>
-    </Form>
+      <Button type="submit">Add contact</Button>
+    </StyledForm>
   </Formik>
 );
