@@ -7,7 +7,8 @@ export const List = styled.ul`
   font-size: 25px;
 `;
 
-export const ContactItem = styled.li``;
+export const ContactItem = styled.li`
+`;
 
 export const Span = styled.span`
   display: flex;
